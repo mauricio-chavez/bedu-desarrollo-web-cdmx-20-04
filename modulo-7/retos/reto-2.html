@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>Reto 2: Crear una tabla</title>
+  </head>
+  <body>
+    <h1>Mountains</h1>
+
+    <div id="mountains"></div>
+
+    <script>
+      var data = [
+        { name: 'Kilimanjaro', height: 5895, place: 'Tanzania' },
+        { name: 'Everest', height: 8848, place: 'Nepal' },
+        { name: 'Mount Fuji', height: 3776, place: 'Japan' },
+        { name: 'Vaalserberg', height: 323, place: 'Netherlands' },
+        { name: 'Denali', height: 6168, place: 'United States' },
+        { name: 'Popocatepetl', height: 5465, place: 'Mexico' },
+        { name: 'Mont Blanc', height: 4808, place: 'Italy/France' },
+      ];
+
+      var tableContainer = document.getElementById('mountains');
+
+      // Creating table
+      var table = document.createElement('table');
+
+      // Getting fields
+      var fields = Object.keys(data[0]);
+
+      // Headers row
+      var headersRow = document.createElement('tr');
+      for (var i = 0; i < fields.length; i++) {
+        var header = document.createElement('th');
+        var text = document.createTextNode(fields[i]);
+        header.appendChild(text);
+        headersRow.appendChild(header);
+      }
+      table.appendChild(headersRow);
+
+      // Data rows
+      for (var i = 0; i < data.length; i++) {
+        var row = document.createElement('tr');
+        var currentData = data[i];
+        for (var j = 0; j < fields.length; j++) {
+          var currentField = fields[j];
+          var tableData = document.createElement('td');
+          var text = document.createTextNode(currentData[currentField]);
+          if (typeof currentData[currentField] === 'number') {
+            tableData.style.textAlign = 'right';
+          }
+          tableData.appendChild(text);
+          row.appendChild(tableData);
+        }
+        table.appendChild(row);
+      }
+
+      // Adding table to table container
+      tableContainer.appendChild(table);
+    </script>
+  </body>
+</html>
