@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+
+    <form>
+      <p></p>
+      <input type="text" name="query" />
+      <button>Submit</button>
+    </form>
+
+    <script>
+      var form = document.querySelector('form');
+      var queryInput = document.querySelector('input');
+      var query = document.querySelector('p');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        query.textContent = 'Buscando: ' + queryInput.value;
+      });
+    </script>
+  </body>
+</html>

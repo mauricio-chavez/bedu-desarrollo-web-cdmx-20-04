@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ejemplo 2: Usando event object</title>
+  </head>
+  <body>
+    <h1 id="title">Hello World!</h1>
+
+    <input type="text" id="text" />
+
+    <script>
+      var title = document.querySelector('#title');
+      var textInput = document.querySelector('#text');
+
+      textInput.addEventListener('input', function (event) {
+        var message = event.target.value;
+        if (message) {
+          title.textContent = message;
+        } else {
+          title.textContent = 'Hello World!';
+        }
+      });
+    </script>
+  </body>
+</html>

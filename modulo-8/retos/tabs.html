@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>Reto 3: Navegando entre tabs</title>
+  </head>
+  <body>
+    <div id="tab-panel">
+      <div data-tabname="First">Tab one</div>
+      <div data-tabname="Second">Tab two</div>
+      <div data-tabname="Third">Tab three</div>
+    </div>
+
+    <script>
+      function createTabs(node) {
+        var tabs = Array.from(node.children).map(function (node) {
+          var button = document.createElement('button');
+          button.textContent = node.getAttribute('data-tabname');
+
+          var tab = {
+            node: node,
+            button: button,
+          };
+
+          button.addEventListener('click', function () {
+            return selectTab(tab);
+          });
+
+          return tab;
+        });
+
+        var tabList = document.createElement('div');
+
+        for (var i = 0; i < tabs.length; i++) {
+          tabList.appendChild(tabs[i].button);
+        }
+
+        node.insertBefore(tabList, node.firstChild);
+
+        function selectTab(selectedTab) {
+          for (var i = 0; i < tabs.length; i++) {
+            var selected = tabs[i] == selectedTab;
+            tabs[i].node.style.display = selected ? '' : 'none';
+            tabs[i].button.style.color = selected ? 'red' : '';
+          }
+        }
+
+        selectTab(tabs[0]);
+      }
+
+      
+    </script>
+  </body>
+</html>

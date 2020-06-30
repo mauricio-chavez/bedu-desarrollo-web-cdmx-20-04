@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ejemplo 3: Key events</title>
+  </head>
+  <body>
+    <h2>Press Enter to turn this page blue.</h2>
+    <h2>Press Ctrl + Enter to turn this page orange.</h2>
+
+    <script>
+      window.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && event.key === 'Enter') {
+          document.body.style.background = 'orange';
+        } else if (event.key === 'Enter') {
+          document.body.style.background = 'lightblue';
+        }
+      });
+
+      window.addEventListener('keyup', function (event) {
+        document.body.style.background = 'white';
+      });
+    </script>
+  </body>
+</html>

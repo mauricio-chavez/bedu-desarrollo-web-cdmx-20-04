@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scroll</title>
+    <style>
+      html,
+      body {
+        height: 200vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Scroll</h1>
+
+    <script>
+      window.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
