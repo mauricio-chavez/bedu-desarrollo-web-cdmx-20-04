@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  color: rgb(23, 15, 176);
+}
+
+h2 {
+  color: rgb(19, 13, 142);
+}
+
+input {
+  display: block;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+button {
+  background-color: rgb(237, 211, 17);
+  color: #000;
+  width: 100px;
+  height: 30px;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.pokemon {
+  text-align: center;
+}
